@@ -21,6 +21,7 @@ function addItem(event) {
 
 function clearAll(event) {
   event.preventDefault();
+  alert("All items are cleared!");
   $(".to-do-item").remove();
 }
 
