@@ -29,7 +29,15 @@ function clearAll(event) {
   localStorage.removeItem("textArray");
 }
 
+function refreshRecall() {
+  array = JSON.parse(getItem("textArray"))
+  for (var i = 0; i < array.length(); i++){
+    appendContainer.append(array[i]);
+  }
+}
+
 //Calling Functions & Event Listeners
   //1. when submit button is clicked, append user input text to the container
 submitBtn.on("click", addItem);
 clearAllBtn.on("click", clearAll);
+refreshRecall();
