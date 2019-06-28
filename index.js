@@ -3,6 +3,7 @@ console.log("JS is loaded.");
 
 //Variables
 var submitBtn = $(".submit");
+var clearAllBtn = $(".clear-all");
 var appendContainer = $(".append-container");
 
 
@@ -16,6 +17,14 @@ function addItem(event) {
   $(".text").val("");
 }
 
+function clearAll(event) {
+  event.preventDefault();
+  appendContainer.innerHTML = "All items successfully cleared!";
+  sleep(3000);
+  appendContainer.innerHTML = "";
+}
+
 //Calling Functions & Event Listeners
   //1. when submit button is clicked, append user input text to the container
 submitBtn.on("click", addItem);
+clearAllBtn.on("click", clearAll);
