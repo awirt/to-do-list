@@ -5,24 +5,27 @@ console.log("JS is loaded.");
 var submitBtn = $(".submit");
 var clearAllBtn = $(".clear-all");
 var appendContainer = $(".append-container");
-
+var localStorageText = [];
 
 //Functions
 function addItem(event) {
   event.preventDefault();
   var userText = $(".text").val();
-  appendContainer.append(`
+  var newHTML = `
     <section class="to-do-item">
       <p>${userText}</p>
     </section>
-  `);
+  `
+  appendContainer.append(newHTML);
+  localStorageText.push(newHTML);
+  console.log(localStorageText);
   $(".text").val("");
 }
 
 function clearAll(event) {
   event.preventDefault();
-  alert("All items are cleared!");
   $(".to-do-item").remove();
+  alert("All items are cleared!");
 }
 
 //Calling Functions & Event Listeners
