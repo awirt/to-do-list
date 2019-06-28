@@ -3,3 +3,18 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.all-content {
+  border-style: solid;
+  border-color: red;
+}
+
+.header {
+  border-style: solid;
+  border-color: blue;
+}
+
+.main-body {
+  border-style: solid;
+  border-color: green;
+}
