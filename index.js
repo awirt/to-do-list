@@ -18,7 +18,7 @@ function addItem(event) {
   `
   appendContainer.append(newHTML);
   localStorageText.push(newHTML);
-  localStorage.setItem("textArray", localStorageText);
+  localStorage.setItem("textArray", JSON.stringify(localStorageText));
   $(".text").val("");
 }
 
