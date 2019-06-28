@@ -15,7 +15,7 @@ function addItem(event) {
     <section class="to-do-item">
       <p>${userText}</p>
     </section>
-  `
+  `;
   appendContainer.append(newHTML);
   localStorageText.push(newHTML);
   localStorage.setItem("textArray", JSON.stringify(localStorageText));
@@ -30,10 +30,10 @@ function clearAll(event) {
 }
 
 function refreshRecall() {
-  array = JSON.parse(localStorage.getItem("textArray"))
+  array = JSON.parse(localStorage.getItem("textArray"));
   for (var i = 0; i < array.length(); i++){
     appendContainer.append(array[i]);
-  }
+  };
 }
 
 //Calling Functions & Event Listeners
