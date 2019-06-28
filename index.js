@@ -13,7 +13,7 @@ function addItem(event) {
   appendContainer.append(`
     <p>${userText}</p>
   `);
-  userText.val("");
+  $(".text").val("");
 }
 
 //Calling Functions & Event Listeners
