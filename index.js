@@ -12,15 +12,16 @@ function addItem(event) {
   event.preventDefault();
   var userText = $(".text").val();
   appendContainer.append(`
-    <p>${userText}</p>
+    <section class="to-do-item">
+      <p>${userText}</p>
+    </section>
   `);
   $(".text").val("");
 }
 
 function clearAll(event) {
   event.preventDefault();
-  appendContainer.innerHTML = "All items successfully cleared!";
-  appendContainer.innerHTML = "";
+  $(".to-do-item").remove();
 }
 
 //Calling Functions & Event Listeners
