@@ -11,7 +11,7 @@ function addItem(event) {
   event.preventDefault();
   var userText = $(".text").val();
   appendContainer.append(`
-    <p>#{userText}</p>
+    <p>${userText}</p>
   `);
 }
 
