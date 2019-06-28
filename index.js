@@ -18,7 +18,7 @@ function addItem(event) {
   `
   appendContainer.append(newHTML);
   localStorageText.push(newHTML);
-  console.log(localStorageText);
+  localStorage.setItem("textArray", localStorageText);
   $(".text").val("");
 }
 
@@ -26,6 +26,7 @@ function clearAll(event) {
   event.preventDefault();
   $(".to-do-item").remove();
   alert("All items are cleared!");
+  localStorage.removeItem("textArray");
 }
 
 //Calling Functions & Event Listeners
