@@ -20,7 +20,6 @@ function addItem(event) {
 function clearAll(event) {
   event.preventDefault();
   appendContainer.innerHTML = "All items successfully cleared!";
-  sleep(3000);
   appendContainer.innerHTML = "";
 }
 
