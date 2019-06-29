@@ -48,8 +48,7 @@ function xButton() {
     event.preventDefault();
     var htmlContainer = event.target.parentNode
     htmlContainer.remove();
-    var htmlContainerString = `${htmlContainer}`;
-    newArray = deleteElementFromArray(htmlContainerString);
+    newArray = deleteElementFromArray(htmlContainer.innerHTML);
     localStorage.setItem("textArray", JSON.stringify(newArray));
   }
 }
@@ -61,7 +60,7 @@ function deleteElementFromArray (htmlElement) {
 
   if (array !== null){
     for (var i = 0; i <array.length; i++){
-      if (array[i] === htmlElement){
+      if (array[i] == htmlElement){
       array.splice(i,1);
       i--};
     };
