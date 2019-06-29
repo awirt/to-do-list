@@ -21,7 +21,13 @@ function addItem(event) {
   localStorage.setItem("textArray", JSON.stringify(localStorageText));
   $(".text").val("");
   var xBtn = $(".delete-entry");
+  
+  //Clicking Delete Button Function IFF button exists
   xBtn.on("click", deleteEntry);
+  function deleteEntry(event) {
+    event.preventDefault();
+    console.log(event.target.parentNode);
+  }
 }
 
 function clearAll(event) {
@@ -38,11 +44,6 @@ function refreshRecall() {
     appendContainer.append(array[i]);
     }
   };
-}
-
-function deleteEntry(event) {
-  event.preventDefault();
-  console.log(event.target.parentNode);
 }
 
 //Calling Functions & Event Listeners
