@@ -20,6 +20,7 @@ function addItem(event) {
   localStorageText.push(newHTML);
   localStorage.setItem("textArray", JSON.stringify(localStorageText));
   $(".text").val("");
+  xButton();
 }
 
 function clearAll(event) {
@@ -36,6 +37,7 @@ function refreshRecall() {
     appendContainer.append(array[i]);
     }
   };
+  xButton();
 }
 
 function xButton() {
@@ -54,4 +56,3 @@ function xButton() {
 submitBtn.on("click", addItem);
 clearAllBtn.on("click", clearAll);
 refreshRecall();
-xButton();
