@@ -20,14 +20,6 @@ function addItem(event) {
   localStorageText.push(newHTML);
   localStorage.setItem("textArray", JSON.stringify(localStorageText));
   $(".text").val("");
-  var xBtn = $(".delete-entry");
-  
-  //Clicking Delete Button Function IFF button exists
-  xBtn.on("click", deleteEntry);
-  function deleteEntry(event) {
-    event.preventDefault();
-    event.target.parentNode.remove();
-  }
 }
 
 function clearAll(event) {
@@ -46,8 +38,20 @@ function refreshRecall() {
   };
 }
 
+function xButton() {
+  var xBtn = $(".delete-entry");
+  
+  //Clicking Delete Button Function IFF button exists
+  xBtn.on("click", deleteEntry);
+  function deleteEntry(event) {
+    event.preventDefault();
+    event.target.parentNode.remove();
+  }
+}
+
 //Calling Functions & Event Listeners
   //1. when submit button is clicked, append user input text to the container
 submitBtn.on("click", addItem);
 clearAllBtn.on("click", clearAll);
 refreshRecall();
+xButton();
