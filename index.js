@@ -13,7 +13,7 @@ function addItem(event) {
   var userText = $(".text").val();
   var newHTML = `
     <section class="to-do-item">
-      <button type="button" class="delete-entry">x</button><p>${userText}</p>
+      <button type="button" class="delete-entry">x</button>${userText}
     </section>
   `;
   appendContainer.append(newHTML);
