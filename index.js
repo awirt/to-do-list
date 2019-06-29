@@ -42,13 +42,26 @@ function refreshRecall() {
 
 function xButton() {
   var xBtn = $(".delete-entry");
-  
   //Clicking Delete Button Function IFF button exists
   xBtn.on("click", deleteEntry);
   function deleteEntry(event) {
     event.preventDefault();
     event.target.parentNode.remove();
   }
+  newArray = deleteElementFromArray(JSON.stringify(event.target.parentNode.innerHTML));
+  localStorage.setItem("textArray", JSON.stringify(newArray))
+}
+
+function deleteElementFromArray (htmlElement) {
+  array = JSON.parse(localStorage.getItem("textArray"));
+  if (array !== null){
+    for (var i = 0; i <array.length; i++){
+      if (array[i] === htmlElement){
+      array.splice(i,1);
+      i--};
+    };
+    return array
+  };
 }
 
 //Calling Functions & Event Listeners
