@@ -56,6 +56,7 @@ function xButton() {
 
 function deleteElementFromArray (htmlElement) {
   array = JSON.parse(localStorage.getItem("textArray"));
+  console.log(htmlElement);
   if (array !== null){
     for (var i = 0; i <array.length; i++){
       if (array[i] === htmlElement){
@@ -63,7 +64,9 @@ function deleteElementFromArray (htmlElement) {
       i--};
     };
     return array
+    console.log(array);
   };
+  console.log(array);
 }
 
 //Calling Functions & Event Listeners
