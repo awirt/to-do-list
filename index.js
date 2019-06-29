@@ -20,6 +20,8 @@ function addItem(event) {
   localStorageText.push(newHTML);
   localStorage.setItem("textArray", JSON.stringify(localStorageText));
   $(".text").val("");
+  var xBtn = $(".delete-entry");
+  xBtn.on("click", deleteEntry);
 }
 
 function clearAll(event) {
@@ -36,6 +38,11 @@ function refreshRecall() {
     appendContainer.append(array[i]);
     }
   };
+}
+
+function deleteEntry(event) {
+  event.preventDefault();
+  console.log(event.target);
 }
 
 //Calling Functions & Event Listeners
