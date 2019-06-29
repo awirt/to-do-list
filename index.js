@@ -26,7 +26,7 @@ function addItem(event) {
   xBtn.on("click", deleteEntry);
   function deleteEntry(event) {
     event.preventDefault();
-    console.log(event.target.parentNode);
+    event.target.parentNode.remove();
   }
 }
 
