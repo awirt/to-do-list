@@ -32,7 +32,7 @@ function clearAll(event) {
 function refreshRecall() {
   array = JSON.parse(localStorage.getItem("textArray"));
   if (array !== null){
-    for (var i = 0; i < array.length(); i++){
+    for (var i = 0; i < array.length; i++){
     appendContainer.append(array[i]);
     }
   };
