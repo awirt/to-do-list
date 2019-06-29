@@ -46,8 +46,9 @@ function xButton() {
   xBtn.on("click", deleteEntry);
   function deleteEntry(event) {
     event.preventDefault();
-    event.target.parentNode.remove();
-    console.log(event.target.parentNode);
+    var htmlContainer = event.target.parentNode
+    htmlContainer.remove();
+    console.log(JSON.stringify(htmlContainer));
 //     newArray = deleteElementFromArray(JSON.stringify(event.target.parentNode.innerHTML));
 //     localStorage.setItem("textArray", JSON.stringify(newArray))
   }
