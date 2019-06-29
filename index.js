@@ -59,8 +59,8 @@ function deleteElementFromArray (htmlElement) {
   console.log(array);
 
   for (var i = 0; i <array.length; i++){
-    if (array[i] == htmlElement){
     console.log(i);
+    if (array[i] == htmlElement){
     array.splice(i,1);
     i--};
   };
