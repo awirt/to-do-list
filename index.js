@@ -48,7 +48,7 @@ function xButton() {
     event.preventDefault();
     var htmlContainer = event.target.parentNode
     htmlContainer.remove();
-    newArray = deleteElementFromArray(htmlContainer.innerHTML);
+    newArray = deleteElementFromArray(String(htmlContainer.innerHTML));
     localStorage.setItem("textArray", JSON.stringify(newArray));
   }
 }
