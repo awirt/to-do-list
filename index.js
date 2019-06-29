@@ -42,7 +42,7 @@ function refreshRecall() {
 
 function deleteEntry(event) {
   event.preventDefault();
-  console.log(event.target);
+  alert(event.target);
 }
 
 //Calling Functions & Event Listeners
