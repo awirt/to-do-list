@@ -13,7 +13,7 @@ function addItem(event) {
   var userText = $(".text").val();
   var newHTML = `
     <section class="to-do-item">
-      <input type="checkbox" class="completed-task" name="complete" value="completed">${userText}<button type="button" class="delete-entry">x</button>
+      <div class="unchecked"><input type="checkbox" class="checkbox" name="complete" value="completed">${userText}</div><button type="button" class="delete-entry">x</button>
     </section>
   `;
   appendContainer.append(newHTML);
@@ -21,6 +21,7 @@ function addItem(event) {
   localStorage.setItem("textArray", JSON.stringify(localStorageText));
   $(".text").val("");
   xButton();
+  completed();
 }
 
 function clearAll(event) {
@@ -37,6 +38,7 @@ function refreshRecall() {
       appendContainer.append(array[i]);
     };
     xButton();
+    completed();
   };
 }
 
@@ -64,6 +66,16 @@ function deleteElementFromArray (htmlElement) {
   
   return array;
 }
+
+function completed(){
+  var checkbox = $(".checkbox");
+  checkbox.on("click", strikethrough);
+  function strikethrough(event){
+    event.preventDefault();
+    var html = event.target.parentNode;
+    html.toggleClass("checked");
+  };
+};
 
 //Calling Functions & Event Listeners
   //1. when submit button is clicked, append user input text to the container
