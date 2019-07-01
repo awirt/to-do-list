@@ -48,19 +48,16 @@ function xButton() {
     event.preventDefault();
     var htmlContainer = event.target.parentNode
     htmlContainer.remove();
-    newArray = deleteElementFromArray(htmlContainer.innerHTML);
+    newArray = deleteElementFromArray(htmlContainer.outerHTML);
     localStorage.setItem("textArray", JSON.stringify(newArray));
   }
 }
 
 function deleteElementFromArray (htmlElement) {
   array = JSON.parse(localStorage.getItem("textArray"));
-  console.log(htmlElement);
-  console.log(array);
 
   for (var i = 0; i <array.length; i++){
-    console.log(i);
-    if (array[i] == htmlElement){
+    if (array[i].trim() == htmlElement){
     array.splice(i,1);
     i--};
   };
