@@ -37,7 +37,6 @@ function refreshRecall() {
     appendContainer.append(array[i]);
     }
   };
-  xButton();
 }
 
 function xButton() {
