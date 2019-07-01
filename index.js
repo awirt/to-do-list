@@ -13,7 +13,7 @@ function addItem(event) {
   var userText = $(".text").val();
   var newHTML = `
     <section class="to-do-item">
-      <button type="button" class="delete-entry">x</button>${userText}
+      <input type="checkbox" class="completed-task" name="complete" value="completed">${userText}<button type="button" class="delete-entry">x</button>
     </section>
   `;
   appendContainer.append(newHTML);
