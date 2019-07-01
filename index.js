@@ -20,7 +20,6 @@ function addItem(event) {
   localStorageText.push(newHTML);
   localStorage.setItem("textArray", JSON.stringify(localStorageText));
   $(".text").val("");
-  xButton();
 }
 
 function clearAll(event) {
@@ -69,3 +68,4 @@ function deleteElementFromArray (htmlElement) {
 submitBtn.on("click", addItem);
 clearAllBtn.on("click", clearAll);
 refreshRecall();
+xButton();
