@@ -36,6 +36,7 @@ function refreshRecall() {
     for (var i = 0; i < array.length; i++){
       appendContainer.append(array[i]);
     };
+    xButton();
   };
 }
 
