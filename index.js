@@ -64,6 +64,8 @@ function deleteElementFromArray (htmlElement) {
     array.splice(i,1);
     i--};
   };
+  
+  return array;
 }
 
 //Calling Functions & Event Listeners
