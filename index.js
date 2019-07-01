@@ -20,6 +20,7 @@ function addItem(event) {
   localStorageText.push(newHTML);
   localStorage.setItem("textArray", JSON.stringify(localStorageText));
   $(".text").val("");
+  xButton();
 }
 
 function clearAll(event) {
@@ -32,9 +33,10 @@ function clearAll(event) {
 function refreshRecall() {
   array = JSON.parse(localStorage.getItem("textArray"));
   if (array !== null){
+    xButton();
     for (var i = 0; i < array.length; i++){
-    appendContainer.append(array[i]);
-    }
+      appendContainer.append(array[i]);
+    };
   };
 }
 
@@ -68,4 +70,3 @@ function deleteElementFromArray (htmlElement) {
 submitBtn.on("click", addItem);
 clearAllBtn.on("click", clearAll);
 refreshRecall();
-xButton();
